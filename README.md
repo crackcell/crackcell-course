@@ -1,2 +1,2 @@
-Coursera Homework
-=================
+Self-study Homework
+===================
