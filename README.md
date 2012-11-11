@@ -1,2 +1,2 @@
-coursera-compdata_20120924
-==========================
+Coursera Homework
+=================
