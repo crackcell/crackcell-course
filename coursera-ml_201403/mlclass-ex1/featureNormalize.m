@@ -26,9 +26,18 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+feanum = size(X, 2);
+instnum = size(X, 1);
 
+for fea = 1:feanum
+     mu(fea) = mean(X(:, fea));
+     sigma(fea) = std(X(:, fea));
+     for inst = 1:instnum
+         X_norm(inst, fea) = (X(inst, fea) - mu(fea)) / sigma(fea);
+     end
+end
 
-
+X_norm
 
 
 

@@ -17,15 +17,18 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    feanum = size(X, 2);
+    theta_update = zeros(feanum, 1);
+    for inst = 1:m
+        loss = X(inst, :) * theta - y(inst);
+        for fea = 1:feanum
+           theta_update(fea) = theta_update(fea) + loss * X(inst, fea);
+        end
+    end
 
-
-
-
-
-
-
-
-
+    for fea = 1:feanum
+       theta(fea) = theta(fea) - alpha / m * theta_update(fea); 
+    end
 
     % ============================================================
 
