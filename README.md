@@ -1,2 +1,2 @@
-Self-study Homework
-===================
+Course Homework
+===============
