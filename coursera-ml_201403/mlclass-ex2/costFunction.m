@@ -20,12 +20,20 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+for inst = 1:m
+   h = sigmoid(X(inst, :) * theta);
+   J = J - 1 * y(inst) * log(h) - (1 - y(inst)) * log(1 - h);
+end
+J = J / m;
 
-
-
-
-
-
+feanum = size(X, 2);
+for inst = 1:m
+    cost = sigmoid(X(inst, :) * theta) - y(inst);
+    for fea = 1:feanum
+       grad(fea) = grad(fea) + cost * X(inst, fea);
+    end
+end
+grad = grad / m;
 
 % =============================================================
 
